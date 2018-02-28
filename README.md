@@ -1,6 +1,6 @@
 # Metronome.io Site with Auction Board
 
-This project is composed by the main Metronome webpage and an application called "Metronome Auction Board" to operate with the Metronome Auction.
+This project is composed of the main Metronome.io webpage and a React application called "Metronome Auction Board" to operate with the Metronome Auction.
 
 ## Build
 
@@ -23,7 +23,8 @@ $  npm install
 $  node integration.js
 ```
 
-Finally, you will have ready to run the whole site with the auction board working
+Finally, you will have ready to run and test it with the auction board working.
+Remember, use a bulletproof HTTP server and not that we included for development proposes
 ```bash
 $  npm start
 
