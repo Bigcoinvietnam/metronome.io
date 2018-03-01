@@ -4,7 +4,7 @@
   "description": "",
   "main": "integration.js",
   "scripts": {
-    "build:board": "cd ./metronome-auction-brd && npm install && npm run build",
+    "build:board": "rm -fr ./auct-build && cd ./metronome-auction-brd && npm install && npm run build && cp -R ./build ../auct-build",
     "integrate": "node integration.js",
     "dist": "npm run build:board && npm run integrate",
     "start": "npm run dist && serve ."

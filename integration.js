@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const cheerio = require("cheerio");
 
-const STATIC_DIR = "./metronome-auction-brd/build/static";
+const STATIC_DIR = "./auct-build/static";
 const JS_DIR = path.join(STATIC_DIR, "js");
 const CSS_DIR = path.join(STATIC_DIR, "css");
 
@@ -46,22 +46,22 @@ const init = () => {
 
 init().then(([htmlFile, jsFile, cssFile]) => {
   spinner.text = 'preparing html for change...'
-  const $ = cheerio.load(htmlFile.toString());
+  const $ = cheerio.load(htmlFile.toString())
 
-  // $(`head link `).attr('auct-build', INTEGRATION_ID).remove();
-  // $(`body script`).attr('auct-build', INTEGRATION_ID).remove();
+  const res = $(`head link[id=${INTEGRATION_ID}]`).remove()
+  const res2 = $(`body script[id=${INTEGRATION_ID}]`).remove()
   
   // creates new tags for the css and js
   spinner.text = 'creating new tags from last build...'
   const jsLink = `<script src="${path.join(
     JS_DIR,
     jsFile
-  )}" auct-build="${INTEGRATION_ID}"/>`;
+  )}" id="${INTEGRATION_ID}"/>`;
 
   const cssLink = `<link rel="stylesheet" href="${path.join(
     CSS_DIR,
     cssFile
-  )}" auct-build="${INTEGRATION_ID}" />`;
+  )}" id="${INTEGRATION_ID}" />`;
 
   spinner.text = 'adding tags...'
   $("body").append(jsLink);
