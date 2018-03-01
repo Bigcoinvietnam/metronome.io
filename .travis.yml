@@ -1,0 +1,12 @@
+dist: trusty
+language: node_js
+node_js:
+  - "9"
+
+install:
+    - npm install
+    - git submodule update --init
+
+script:
+    - npm run integrate
+    # commit changes in the master branch
