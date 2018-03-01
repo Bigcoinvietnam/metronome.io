@@ -4,7 +4,8 @@
   "description": "",
   "main": "integration.js",
   "scripts": {
-    "integrate": "node integration.js",
+    "build-board": "cd ./metronome-auction-brd && npm install && npm run build",
+    "integrate": "npm run build-board && node integration.js",
     "start": "serve ."
   },
   "repository": {
