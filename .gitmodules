@@ -1,0 +1,4 @@
+[submodule "metronome-auction-brd"]
+	path = metronome-auction-brd
+	url = git@github.com:MetronomeToken/metronome-auction-brd.git
+	branch = master
